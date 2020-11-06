@@ -13,9 +13,16 @@ The function should:
   2. Create and return an object using the received values  
 */
 
-function createMenuItem(/*Your code here*/){
-    /*Your code here*/
+function createMenuItem (name1, price1, category1){
+const newObject ={
+    name: name1,
+    price: price1,
+    category: category1
+ }
+
+ return newObject;
 }
+
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Test your createMenuItems function by doing the following:
@@ -25,6 +32,8 @@ Test your createMenuItems function by doing the following:
   
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
+
+
 
 
 
@@ -45,10 +54,18 @@ export const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  /*Your code here*/
+  discount: function (param1){
+    if (param1 === "teacher"){
+    return this.price * 0.75;
+    }
+    if (param1 === "student"){
+      return this.price * 0.75;
+    }
+    if (param === "public"){
+      return this.price * 0.9
+    }
+  }
 }
-
-
 
 ///////////////Reviews (MVP)///////////////////
 const reviews = [
@@ -66,7 +83,7 @@ const reviews = [
 Using the reviews array above:
   1. log only Julius' feedback to the console
 */
-
+console.log (reviews[5].feedback);
 
 
 
@@ -97,9 +114,8 @@ Use the getReviewByIndex function below to do the following:
   For example: getReviewByIndex(reviews,0) would return: "Daniela gave the restaurant a 5 star review, and their feedback was: Beautiful atmosphere and wonderful vegan options!"
 */
 
-
-function getReviewByIndex(/*Your code here*/) {
-  /*Your code here*/
+function getReviewByIndex(review, index) {
+  return `${review[index].name} gave the restaurant a ${review[index].rating} star review, and their feedback was: ${review[index].feedback}`;
 }
 
 
@@ -116,8 +132,8 @@ Use the getLastReview function below to do the following:
 */
 
 
-function getLastReview(/*Your code here*/) {
-  /*Your code here*/
+function getLastReview(review) {
+  return `${review[review.length-1].name} gave the restaurant a ${review[review.length -1].rating} star review, and their feedback was: ${review[review.length -1].feedback}`;
 } 
 
 
